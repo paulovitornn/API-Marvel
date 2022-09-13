@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
-import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './services/guards/auth.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
-  /* { path: 'heroes', component: HeroesComponent}, */
+  { path: 'login', component: LoginComponent},
   {
     path: 'heroes', component: HeroesComponent,
-    children: [
-      { path: 'details/:id', component: HeroDetailComponent }
-    ]
+    canActivate:[AuthGuard]
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: '**', redirectTo: 'home', pathMatch: 'full'}
+  { path: '', redirectTo: 'heroes', pathMatch: 'full'},
+  { path: '**', redirectTo: 'heroes', pathMatch: 'full'}
 
 ];
 

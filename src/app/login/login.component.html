@@ -1,0 +1,30 @@
+<div class="container-fluid ">
+  <div class="row logo-img">
+    <img src="assets/img/marvel-logo.jpg" alt="" class="img-logo ">
+  </div>
+  <div class="row container-login">
+    <div class="card text-center">
+      <div class="card-header">
+        Login Marvel
+      </div>
+      <form class="row g-6 login-card py-3">
+        <div class="col-auto">
+          <label for="staticEmail2" class="visually-hidden mt-1">Email</label>
+          <input [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="staticEmail2" value="" placeholder="Username">
+        </div>
+        <div class="col-auto">
+          <label for="inputPassword2" class="visually-hidden mt-1">Password</label>
+          <input [(ngModel)]="user.pwd" [ngModelOptions]="{standalone: true}" type="password" class="form-control" id="inputPassword2" placeholder="Password">
+        </div>
+        <div class="col-auto d-flex">
+          <button (click)="login()" type="submit" class="btn btn-danger mt-1">Login</button>
+        </div>
+      </form>
+      <div class="card-footer text-muted">
+        username: heroMarvel - Password: 123456
+      </div>
+    </div>
+  </div>
+
+
+</div>

@@ -14,9 +14,9 @@
       </form>
     </div>
   </nav>
-  <div class="container-fluid">
+  <div class="container-fluid" *ngIf="heroSelected == null || heroSelected == undefined">
   <div class="row">
-    <div class="col pb-3" *ngFor="let hero of heroes">
+    <div class="col pb-3" *ngFor="let hero of heroes" (click)="OpenHeroDetails(hero)">
       <div class="card card-hero">
         <img src="{{getUrlImage(hero)}}"  class="card-img-top img-list-hero" alt="...">
         <div class="card-body">
@@ -29,4 +29,9 @@
   </div>
   </div>
 </div>
-<router-outlet></router-outlet>
+<div class="container-fluid" *ngIf="heroSelected != null || heroSelected != undefined">
+  <button (click)="backHeroes()" type="button" class="btn btn-secondary btn-lg">Back</button>
+  <app-hero-detail
+  [hero]="heroSelected"
+  ></app-hero-detail>
+</div>

@@ -1,0 +1,25 @@
+.container-login {
+  /* width: 100vw; */
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  text-align-last: center;
+  align-items: center;
+  place-content: center;
+}
+
+.img-logo {
+  object-fit: cover;
+  width: auto;
+  height: 50%px;
+  padding-top: 10%;
+}
+
+.logo-img{
+  place-content: center;
+}

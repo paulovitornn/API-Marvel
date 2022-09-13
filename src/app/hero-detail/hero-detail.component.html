@@ -1,1 +1,27 @@
-<p>hero-detail works!</p>
+<div class="container-fluid pt-5 color-hero-detail">
+  <div class="row">
+    <div class="col-5">
+      <span>
+        <img src="{{getUrlImage(heroSelected)}}"  class="card-img-top photo-hero" alt="...">
+        <h4 class="name-hero">{{heroSelected.name}}</h4>
+      </span>
+    </div>
+    <div class="col-7">
+      <span *ngIf="heroSelected.description==''">
+        No description for this character.
+      </span>
+      <span>
+        {{heroSelected.description}}
+      </span>
+      <hr class="solid">
+      <h3>Comics</h3>
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let comic of heroSelected.comics.items" >
+            <td>{{comic.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hero-detail',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroDetailComponent implements OnInit {
 
+  @Input() hero:any;
+  heroSelected:any;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.heroSelected = null;
+    this.setHeroSelected();
+  }
+
+  public setHeroSelected(){
+    this.heroSelected = this.hero;
+  }
+
+  public getUrlImage(hero: any): string {
+    let urlImage = hero.thumbnail.path + '.' + hero.thumbnail.extension;
+    return urlImage;
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ApiMarvelService } from '../services/api-marvel.service';
 
 
@@ -9,6 +9,8 @@ import { ApiMarvelService } from '../services/api-marvel.service';
 })
 export class HeroesComponent implements OnInit {
 
+
+  heroSelected:any;
   public heroes: any;
   public _searchNameHero: string = '';
   public limitResult: string = '50';
@@ -19,6 +21,14 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllHeroes();
+  }
+
+  public OpenHeroDetails(hero:any){
+    this.heroSelected = hero;
+  }
+
+  public backHeroes(){
+    this.heroSelected = null;
   }
 
   public getUrlImage(hero: any): string {
@@ -54,6 +64,7 @@ export class HeroesComponent implements OnInit {
 
   public getHeroesByStartName(startName: string): void {
     if(startName.length>0){
+      this.backHeroes();
       this.apiMarvelSrv.getHeroesByStartName(startName, this.limitResult).subscribe({
         next: (x: any) => {
           this.heroes = x.data.results;

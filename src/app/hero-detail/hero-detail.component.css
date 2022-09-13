@@ -1,0 +1,15 @@
+.color-hero-detail{
+  background-color: beige;
+  border-radius: 10px;
+  min-height: 400px;
+  width: 80%;
+}
+
+.name-hero{
+  margin-top: 10px;
+  text-align: center;
+}
+
+.photo-hero{
+  border-radius: 10px;
+}
