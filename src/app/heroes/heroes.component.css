@@ -1,0 +1,10 @@
+.card-hero {
+  cursor: pointer;
+  width: 18rem;
+  padding-bottom: 5px;
+}
+
+.img-list-hero {
+  height: 17rem;
+  object-fit: cover;
+}
