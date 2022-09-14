@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/api-marvel",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
